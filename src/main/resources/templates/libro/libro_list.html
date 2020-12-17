@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html
+lang="en"
+xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Libro list</title>
+</head>
+<body>
+  <h2>Lista Libri</h2>
+
+  <table th:if="${ not #lists.isEmpty(libroList)}" border = 1>
+    <tr>
+      <td><b>Nome</b></td>
+      <td><b>Descrizione</b></td>
+      <td><b>Numero copie</b></td>
+    </tr>
+    <tr th:each="libro : ${libroList}">
+      <td th:text="${libro.nome}"></td>
+      <td th:text="${libro.descrizione}"></td>
+      <td th:text="${libro.numeroCopie}"></td>
+    </tr>
+  </table>
+
+  <h2>Aggiungi un libro</h2>
+
+  <form method="post" action="/libro/add">
+    <table>
+      <tr><td align="right">Book name:</td><td align="left"><input type="text" name="nome" size="50" /></td></tr>
+      <tr><td align="right">Description:</td><td align="left"><input type="text" name="descrizione" size="50" /></td></tr>
+      <tr><td align="right"># copies:</td><td align="left"><input type="number" name="numeroCopie" size="50" /></td></tr>
+      <tr><td align="right"></td><td align="left"><input type="submit" /></td></tr>
+    </table>
+  </form>
+</body>
+</html>
