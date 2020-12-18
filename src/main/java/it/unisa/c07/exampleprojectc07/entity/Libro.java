@@ -1,6 +1,6 @@
 package it.unisa.c07.exampleprojectc07.entity;
 
-import lombok.Data;
+import lombok.Data;         // Lombok import
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
